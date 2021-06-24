@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Ingridient Controller!{% endblock %}
+
+{% block body %}
+<div class="form-ingredient">
+    {{ form_start(form) }}
+    <div class="form-floating">
+        {{ form_widget(form.amount,{'attr' : {'id' : 'floatingInput', 'class' : 'form-control'  }}) }}
+        <label for="floatingInput" style="margin-left: 40px">Enter amount</label>
+    </div>
+    <div class="form-floating">
+        {{ form_widget(form.unit,{'attr' : {'id' : 'floatingInput', 'class' : 'form-control'  }}) }}
+        <label for="floatingInput" style="margin-left: 40px">Enter unit</label>
+    </div>
+        {{ form_widget(form.ingredient, {'attr' : {'class' : 'form-select form-select-sm'}}) }}
+
+    <div class="btn-submit">
+        {{ form_widget(form.save , {'attr' : {'class': 'btn btn-success'}}) }}
+    </div>
+    {{ form_end(form) }}
+</div>
+
+{% endblock %}

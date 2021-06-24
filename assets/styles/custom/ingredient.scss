@@ -17,12 +17,7 @@ text-align: center;
   font-size: 20px;
   font-weight: bold;
 }
-.btn-submit{
-  margin-top: 20px;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 10px);
-}
+
 .unit-row{
   display: flex;
   justify-content: center;
@@ -32,9 +27,13 @@ text-align: center;
 .unit-label{
   width: 70px;
 }
-#ingredient_save{
+#ingredient_save, #course_ingredient_save{
   width: 200px;
+  margin-top: 20px;
 }
 a{
   color: black;
+}
+#course_ingredient_amount, #course_ingredient_unit{
+  margin-bottom: 10px;
 }
