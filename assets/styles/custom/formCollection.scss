@@ -1,0 +1,61 @@
+li {
+  list-style-type: none;
+}
+
+.course-name {
+  width: 200px;
+  height: 70px !important;
+
+}
+
+.course {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul {
+  padding: 0;
+}
+
+.list-of-fields {
+  width: 500px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: -10px;
+}
+
+.form-fields {
+  display: flex;
+}
+
+.form-ingredient, .form-amount {
+  margin-right: 20px;
+}
+
+.action-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  height: 35px;
+}
+
+.delete-button {
+  margin-left: 10px;
+}
+
+.save-button {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 20px;
+}
+
+.add-button {
+  display: flex;
+  justify-content: center;
+}
