@@ -1,7 +1,7 @@
 <template>
   <div>
     <form method="post">
-      <div class="test" v-model="formData = config">
+      <div class="test">
         <div class="form-floating course">
           <input v-once name="course[name]" type="text" required id="course_name"
                  class="form-control course-name text-center" placeholder="Course name" :value="courseName">
@@ -17,10 +17,10 @@
               <select v-bind:class="`form-control form_ingredient_select_${index} form-ingredient form-select`"
                       v-bind:id="`course_courseIngredient_${index}_ingredient`"
                       v-bind:name="`course[courseIngredient][${index}][ingredient]`"
-                      v-bind:value="courseIngredients.ingredient.id"
+                      v-bind:value="courseIngredients.ingredient.id ? courseIngredients.ingredient.id : null"
                       @change="selectedChange(index)"
                       required="required">
-                <option>--Ingredient--</option>
+                <option :value="null" disabled>{{ selected }}</option>
                 <option
                     v-for="(ingredient, key) in ingredients"
                     v-bind:class="`ingredient_${ingredient.id}`"
@@ -69,8 +69,9 @@
           </button>
         </div>
       </div>
-      <div>
+      <div class="text-center mt-3">
         <button type="submit" class="save-button btn btn-success" name="course[save]">Save</button>
+        <a @click="backPage" type="submit" class="btn btn-primary button-back" >Back</a>
       </div>
     </form>
   </div>
@@ -78,6 +79,9 @@
 <script>
 export default {
   props: ['courseName', 'config', 'ingredients'],
+  beforeMount() {
+    this.formData = this.config
+  },
   data() {
     return {
       selected: '--Ingredient--',
@@ -101,6 +105,9 @@ export default {
     deleteCourseIngredient(index) {
       this.formData = this.formData.splice(index, 1);
     },
+    backPage(){
+      window.history.back();
+    }
   }
 }
 </script>
