@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MealPlan edit{% endblock %}
+
+{% block body %}
+    <div id="mealPlan"
+         data-days="{{ days | json_encode }}"
+         data-meals="{{ meals | json_encode }}"
+         data-course="{{ course | serialize ('json', {groups: 'course-simple' }) }}"
+         data-meal-plan-item="{{ mealPlan.mealPlanItem | serialize('json', {groups: ['meal-plan-item-simple','meal-plan-simple', 'course-simple'] }) }}"
+    ></div>
+{% endblock %}

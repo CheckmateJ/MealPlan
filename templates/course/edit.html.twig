@@ -6,6 +6,6 @@
     <div id="app"
          data-course-name="{{ courseName }}"
          data-init-value="{{ course.courseIngredient |serialize('json', { groups: ['course-ingredient-simple', 'course-simple', 'ingredient-simple']}) }}"
-         data-ingredients-value="{{ ingredients |serialize('json', { groups: ['ingredient-simple']}) }}">
+         data-ingredients-value="{{ ingredients |serialize('json', { groups: 'ingredient-simple'}) }}">
     </div>
 {% endblock %}
